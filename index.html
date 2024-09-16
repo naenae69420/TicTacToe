@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ROCKPAPERSCISSORS</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <h1>
+            ROCK PAPER SCISSOR GAME
+        </h1>
+        <div class="BUTTONING"><button>Ready to Start?</button></div>
+        
+
+        <script>
+            let getComputerChoice = () => {
+                let randomNum = Math.random();
+                if (randomNum <= 0.33)
+                {
+                    return "ROCK";
+                }
+                else if (randomNum <= 0.66)
+                {
+                    return "PAPER";
+                }
+                else{
+                    return "SCISSOR";
+                }
+                
+            }
+
+            let getHumanChoice = () => {
+                let word = prompt("Type in ROCK, PAPER, or SCISSOR. Enter QUIT to exit");
+                let input = word.toUpperCase();
+                if (input === "ROCK")
+                {
+                    return "ROCK";
+                }
+                else if (input === "PAPER")
+                {
+                    return "PAPER";
+                }
+                else if (input === "SCISSOR")
+                {
+                    return "SCISSOR"
+                }
+                else if (input === "QUIT")
+                {
+                    return "QUIT"
+                }
+                else
+                {
+                    return "Invalid String"
+                }
+            }
+
+            let playRound = (humanChoice, computerChoice) => {
+                if (humanChoice == "ROCK" && computerChoice == "SCISSOR")
+                {
+                    return "You Win against SCISSOR!"
+                }
+                else if (humanChoice == "PAPER" && computerChoice == "SCISSOR")
+                {
+                    return "You Lose against SCISSOR!"
+                }
+                else if (humanChoice == "SCISSOR" && computerChoice == "SCISSOR")
+                {
+                    return "DRAW against SCISSOR!"
+                }
+                else if (humanChoice == "ROCK" && computerChoice == "PAPER")
+                {
+                    return "You Lose against PAPER!"
+                }
+                else if (humanChoice == "PAPER" && computerChoice == "PAPER")
+                {
+                    return "DRAW against PAPER!"
+                }
+                else if (humanChoice == "SCISSOR" && computerChoice == "PAPER")
+                {
+                    return "You WIN! against PAPER!"
+                }
+                else if (humanChoice == "ROCK" && computerChoice == "ROCK")
+                {
+                    return "DRAW against ROCK!"
+                }
+                else if (humanChoice == "PAPER" && computerChoice == "ROCK")
+                {
+                    return "You WIN against ROCK!"
+                }
+                else if (humanChoice == "SCISSOR" && computerChoice == "ROCK")
+                {
+                    return "You Lose against ROCK!"
+                }
+                else if (humanChoice == "QUIT")
+                {
+                    return "QUITTING GAME"
+                }
+                else
+                {
+                    return "String Unknown"
+                }
+            }
+            let humanSelection = 0;
+            let computerSelection = 0;
+
+            while (humanSelection != "QUIT")
+            {
+            humanSelection = getHumanChoice();
+            computerSelection = getComputerChoice();
+            alert(playRound(humanSelection, computerSelection));
+            }
+
+        </script>
+
+    </body>
+
+</html>

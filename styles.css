@@ -1,0 +1,25 @@
+* {
+    font-size: 32px;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+
+button {
+    background: #4e7fd4;
+    color: white;
+    width: 256;
+    height: 96px;
+    text-size-adjust: 48px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.BUTTONING { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
